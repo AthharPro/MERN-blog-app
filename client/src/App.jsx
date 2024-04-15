@@ -1,7 +1,5 @@
-import React from 'react'
-
 export default function App() {
   return (
-    <div>app</div>
+    <h1 className='text-50xl text-red-500'>app</h1>
   )
 }
