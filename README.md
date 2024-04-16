@@ -61,7 +61,7 @@ to get continuous server updates in terminal `npm i nodemon` is used.
 The string contains username and password of DB. Store it in `.env` and hide the string from index.js.
 
 ```jsx
-mport mongoose from 'mongoose';
+import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -72,4 +72,8 @@ mongoose.connect(process.env.MONGO).then(
    console.log(err);
 });
 ```
+
+<h3>Create user Models </h3> <hr>
+
+Set of rules for the user in the server side of the code. `user.model.js` contains schemas and exports a model.
 
