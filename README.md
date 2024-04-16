@@ -54,3 +54,22 @@ to get continuous server updates in terminal `npm i nodemon` is used.
    "start": "node api/index.js"
 },
 ```
+
+<h3>Connect to the Mongo DB </h3> <hr>
+
+`npm i mongoose`. Using the MongoDB website get a connection string. 
+The string contains username and password of DB. Store it in `.env` and hide the string from index.js.
+
+```jsx
+mport mongoose from 'mongoose';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+mongoose.connect(process.env.MONGO).then(
+   () => { console.log('MongoDB is connected');}
+).catch((err) => {
+   console.log(err);
+});
+```
+
