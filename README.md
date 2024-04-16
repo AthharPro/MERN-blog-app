@@ -77,3 +77,16 @@ mongoose.connect(process.env.MONGO).then(
 
 Set of rules for the user in the server side of the code. `user.model.js` contains schemas and exports a model.
 
+<h3>Create a test API route </h3> <hr>
+
+`api/routes/user.route.js` handles all the API routes in the `/test`.<br>
+`api/controllers/user.controller.js` carries the request and response of the API for each an every API.<br>
+`index.js` can use those API routes. such as,
+```jsx
+app.use('/api/user', userRoutes);
+```
+
+to check if the API is working visit `localhost:3000/api/user/test`
+
+
+
