@@ -1,7 +1,10 @@
 # MERN Full Stack Bolg App
 
 **Front-End**<br>
-Vite + React + TailwindCSS + FlowBite
+Vite + React + TailwindCSS + FlowBite <br><br>
+
+**Back-End**<br>
+Express + MongoDB + 
 
 <h3>Install React.js using vite, TailwindCSS and create the template</h3> <hr>
 
@@ -88,7 +91,7 @@ app.use('/api/user', userRoutes);
 
 To check if the API is working visit `localhost:3000/api/user/test`
 
-<h3>Create a Sign-Up API route </h3>
+<h3>Create a Sign-Up API route </h3> <hr>
 
 `api/routes/auth.route.js` creates a POST api request in `/signup`. <br>
 `api/controllers/auth.controller.js` handles the Async request and response in the body.
@@ -109,3 +112,20 @@ Send a POST `localhost:3000/api/auth/signup` request with a json body
 }
 ```
 Check for the response. And check the MondoDB if the data is updated.
+
+<h3>Add middleware and functions to handle errors </h3> <hr>
+
+`/api/utils/error.js` containes the errorHandler with the status code and the error message. <br>
+`index.js` contains the middleware which can be used by `auth.controller.js` using `next`. 
+```jsx
+app.use((err, req, res, next) => {
+   const statusCode = err.statusCode || 500;
+   const message = err.message || 'Internal Server Error';
+   res.status(statusCode).json({
+      success: false,
+      statusCode,
+      message,
+   });
+});
+```
+
