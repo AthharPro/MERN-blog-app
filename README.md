@@ -79,14 +79,33 @@ Set of rules for the user in the server side of the code. `user.model.js` contai
 
 <h3>Create a test API route </h3> <hr>
 
-`api/routes/user.route.js` handles all the API routes in the `/test`.<br>
+`api/routes/user.route.js` handles GET API routes in the `/test`.<br>
 `api/controllers/user.controller.js` carries the request and response of the API for each an every API.<br>
 `index.js` can use those API routes. such as,
 ```jsx
 app.use('/api/user', userRoutes);
 ```
 
-to check if the API is working visit `localhost:3000/api/user/test`
+To check if the API is working visit `localhost:3000/api/user/test`
 
+<h3>Create a Sign-Up API route </h3>
 
+`api/routes/auth.route.js` creates a POST api request in `/signup`. <br>
+`api/controllers/auth.controller.js` handles the Async request and response in the body.
+The password filed is encrypted and saved in the DB. `user.model.js` is also used to validate.<br>
+`await newUser.save();` is used to save in the MongoDB. Small error handlings are done.<br>
+`index.js` uses the API,
+```jsx
+app.use('/api/auth', authRoutes);
+```
 
+To check if the POST api requests are working use `insomnia`.
+Send a POST `localhost:3000/api/auth/signup` request with a json body
+```json
+{
+	"username": "user1",
+	"email":"user1@gmail.com",
+	"password":"password123"
+}
+```
+Check for the response. And check the MondoDB if the data is updated.
