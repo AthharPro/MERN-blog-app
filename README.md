@@ -129,3 +129,9 @@ app.use((err, req, res, next) => {
 });
 ```
 
+<h3> Create SignUp page UI </h3> <hr>
+
+`client/src/pages/SignUp.jsx` has the tailwind + react code to the sign up page.
+
+
+
