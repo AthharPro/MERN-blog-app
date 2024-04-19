@@ -133,5 +133,17 @@ app.use((err, req, res, next) => {
 
 `client/src/pages/SignUp.jsx` has the tailwind + react code to the sign up page.
 
+<h3> Adding functionalities to the SignUp page </h3> <hr>
+
+`handleChange` function is used every time a user inputs in any field.
+`handleSubmit` is used only when user clicks the Sign Up button.
+```jsx
+const [formData, setFormData] = useState({});
+const [errorMessage, setErrorMessage] = useState(null);
+const [loading, setLoading] = useState(false);
+const navigate = useNavigate();
+```
+is used to handle Errors, show a Loading... in the button, and Navigate to `/signin` after successfully submitting the form. <br>
+vite.config.js has been changed to switch the proxy to the server port.
 
 
