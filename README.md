@@ -148,4 +148,9 @@ vite.config.js has been changed to switch the proxy to the server port.
 
 <h3> Create and Add Footer components </h3> <hr>
 
-`/components/Footer.jsx` contains all flowbite codes for the footer. `App.jsx` has `<Footer/>` imported from the Footer.jsx
+`/components/Footer.jsx` contains all flowbite codes for the footer. `App.jsx` has `<Footer/>` imported from the Footer.jsx 
+
+<h3> Create a signin API route </h3> <hr>
+
+`auth.route.js` creates a POST api request in `/signin`. <br>
+`auth.controller.js` checks for the valid email and password in the DB and saves the `jwt` cookie token. else throws an json error.
