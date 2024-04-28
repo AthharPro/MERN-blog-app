@@ -146,4 +146,6 @@ const navigate = useNavigate();
 is used to handle Errors, show a Loading... in the button, and Navigate to `/signin` after successfully submitting the form. <br>
 vite.config.js has been changed to switch the proxy to the server port.
 
+<h3> Create and Add Footer components </h3> <hr>
 
+`/components/Footer.jsx` contains all flowbite codes for the footer. `App.jsx` has `<Footer/>` imported from the Footer.jsx
