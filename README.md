@@ -153,4 +153,8 @@ vite.config.js has been changed to switch the proxy to the server port.
 <h3> Create a signin API route </h3> <hr>
 
 `auth.route.js` creates a POST api request in `/signin`. <br>
-`auth.controller.js` checks for the valid email and password in the DB and saves the `jwt` cookie token. else throws an json error.
+`auth.controller.js` checks for the valid email and password in the DB and saves the `jwt` cookie token. else throws an error (in json).
+
+<h3>Create SignIn page UI</h3> <hr>
+
+`client/src/pages/Signin.jsx` has the tailwind + react code to the sign in page.
