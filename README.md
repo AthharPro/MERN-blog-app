@@ -158,3 +158,16 @@ vite.config.js has been changed to switch the proxy to the server port.
 <h3>Create SignIn page UI</h3> <hr>
 
 `client/src/pages/Signin.jsx` has the tailwind + react code to the sign in page.
+
+<h3>Add redux toolkit</h3> <hr>
+
+https://redux-toolkit.js.org/tutorials/quick-start <br>
+`/src/store.js` contains userReducers. 
+`main.jsx` imports the store from store.js and Provider from react-redux. <br>
+`/user/userSlicer.js` has the logics to all signIn functions.<br>
+use the logics in `Signin.jsx`.<br>
+
+test the sign in page using Redux devTool extension.
+
+
+
