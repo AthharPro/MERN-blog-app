@@ -169,5 +169,12 @@ use the logics in `Signin.jsx`.<br>
 
 test the sign in page using Redux devTool extension.
 
+<h3>Add redux Presist</h3> <hr>
+
+Persist is used to keep current user's deatils (or cookie) even browser refreshed. <br>
+Edit the store.js using `redux-persist` module. `main.js` uses the exported persistor.
+
+
+
 
 
