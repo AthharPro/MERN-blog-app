@@ -174,7 +174,11 @@ test the sign in page using Redux devTool extension.
 Persist is used to keep current user's deatils (or cookie) even browser refreshed. <br>
 Edit the store.js using `redux-persist` module. `main.js` uses the exported persistor.
 
+<h3>Add Google OAuth functionality</h3> <hr>
 
+Create the Ui button for google oauth in `components/Oauth.jsx`. The logic is also included.<br>
+Install FireBase `npm i firebase`. Create `firebase.js` in `src` folder and initialize firebase.<br>
+`auth.route.js` creates a POST API request to `/google` and `auth.controller.js` has the google backend code.
 
 
 
