@@ -56,7 +56,7 @@ export const signin = async (req, res, next) => {
 };
 
 export const google = async (req, res, next) => {
-   const {email, name, googlePhotoURL} = req.body;
+   const {email, name, googlePhotoUrl} = req.body;
    try {
       const user = await User.findOne({email});
       if(user){
@@ -74,7 +74,7 @@ export const google = async (req, res, next) => {
             username: name.toLowerCase().split(' ').join('') + Math.random().toString(9).slice(-4),
             email,
             password: hashedPassword,
-            profilePicture: googlePhotoURL,
+            profilePicture: googlePhotoUrl,
          });
          
          await newUser.save();

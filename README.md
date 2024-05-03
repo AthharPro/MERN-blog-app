@@ -180,5 +180,7 @@ Create the Ui button for google oauth in `components/Oauth.jsx`. The logic is al
 Install FireBase `npm i firebase`. Create `firebase.js` in `src` folder and initialize firebase.<br>
 `auth.route.js` creates a POST API request to `/google` and `auth.controller.js` has the google backend code.
 
+<h3>Update header components with User data</h3> <hr>
 
+`Header.jsx` has been updated, if the currentUser exists then the signIn button is not displayed. The profilePicture of the currentUser is displayed as a dropdown button.
 
