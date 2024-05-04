@@ -184,3 +184,10 @@ Install FireBase `npm i firebase`. Create `firebase.js` in `src` folder and init
 
 `Header.jsx` has been updated, if the currentUser exists then the signIn button is not displayed. The profilePicture of the currentUser is displayed as a dropdown button.
 
+<h3>Complete Dark mode functionality</h3> <hr>
+
+`/redux/theme/themeSlice.js` includes the state for the theme.
+`store.js` uses themeReducer from the themeSlice.
+`ThemeProvider.jsx` has the stylings for the dark and light theme.
+In `Header.jsx` theme button is changed to FaMoon and FaSun
+
