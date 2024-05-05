@@ -194,3 +194,7 @@ In `Header.jsx` theme button is changed to FaMoon and FaSun
 <h3>Make Dashboard Private</h3> <hr>
 
 `/components/PrivateRoute.jsx` has the code , if the user is authenticated only then can access the `/dashborad` page, else its redirected to `/sign-in`
+
+<h3>Complete sidebar of the dashboard</h3> <hr>
+
+`/components/DashSidebar.jsx` gets the tab= parameter value and checks if its 'profile' or not. and activates the button.
