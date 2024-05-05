@@ -191,3 +191,6 @@ Install FireBase `npm i firebase`. Create `firebase.js` in `src` folder and init
 `ThemeProvider.jsx` has the stylings for the dark and light theme.
 In `Header.jsx` theme button is changed to FaMoon and FaSun
 
+<h3>Make Dashboard Private</h3> <hr>
+
+`/components/PrivateRoute.jsx` has the code , if the user is authenticated only then can access the `/dashborad` page, else its redirected to `/sign-in`
