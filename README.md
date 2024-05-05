@@ -198,3 +198,7 @@ In `Header.jsx` theme button is changed to FaMoon and FaSun
 <h3>Complete sidebar of the dashboard</h3> <hr>
 
 `/components/DashSidebar.jsx` gets the tab= parameter value and checks if its 'profile' or not. and activates the button.
+
+<h3>Complete Profile page UI</h3> <hr>
+
+`/components/DashProfile.jsx` contains the flowbite code to the Profile page UI
