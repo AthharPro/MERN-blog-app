@@ -202,3 +202,7 @@ In `Header.jsx` theme button is changed to FaMoon and FaSun
 <h3>Complete Profile page UI</h3> <hr>
 
 `/components/DashProfile.jsx` contains the flowbite code to the Profile page UI
+
+<h3>Complete user image upload functionality</h3> <hr>
+
+`/components/DashProfile.jsx` contains the server code and the upload UI
