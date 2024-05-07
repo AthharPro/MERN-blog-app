@@ -220,3 +220,8 @@ import cookieParser from 'cookie-parser';
 app.use(cookieParser());
 ```
 `user.controller.js` exprots the updateUser function and handle errors and updates the user profile in the DB.
+
+<h3>Complete user update profile page functionality</h3> <hr>
+
+`userSlice.js` contains `updateStart` , `updateSuccess` , `updateFailure` logics. <br>
+Thoes logics are used in `handleSubmit` function in `DashProfile.jsx`
