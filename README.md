@@ -206,3 +206,17 @@ In `Header.jsx` theme button is changed to FaMoon and FaSun
 <h3>Complete user image upload functionality</h3> <hr>
 
 `/components/DashProfile.jsx` contains the server code and the upload UI
+
+<h3>Add Update User API Route</h3> <hr>
+
+`user.route.js`
+```jsx
+router.put('/update/:userId',verifyToken, updateUser);
+```
+created a `/utils/verifyUser.js` to check the user cookie is matching. <br>
+`index.js`
+```jsx
+import cookieParser from 'cookie-parser';
+app.use(cookieParser());
+```
+`user.controller.js` exprots the updateUser function and handle errors and updates the user profile in the DB.
