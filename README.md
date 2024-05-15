@@ -237,3 +237,6 @@ Thoes logics are used in `handleSubmit` function in `DashProfile.jsx`
 <h3>Add signout functionality</h3> <hr>
 
 signout buttons functionality has been updated in `DashProfile`, `Header`, `DashSlider`
+
+<h3>Add Admin user functionality to user</h3> <hr>
+
