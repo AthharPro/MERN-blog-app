@@ -246,3 +246,9 @@ signout buttons functionality has been updated in `DashProfile`, `Header`, `Dash
 
 `DashProfile.jsx` has the create post button.<br>
 `CreatePost.jsx` has the UI code to the create-post page.<br>
+
+<h3>Add a create a post API route</h3> <hr>
+
+`post.model.js` contains all the rules for a post.<br>
+`post.route.js` routes a POST request to `/create`. Which send the request through backend `/api/post/create`.<br>
+`post.controller.js` handles all the logics and errors.
