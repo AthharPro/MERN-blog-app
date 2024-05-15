@@ -226,6 +226,10 @@ app.use(cookieParser());
 `userSlice.js` contains `updateStart` , `updateSuccess` , `updateFailure` logics. <br>
 Thoes logics are used in `handleSubmit` function in `DashProfile.jsx`
 
-<h3>Add delete user API route</h3> <hr>\
+<h3>Add delete user API route</h3> <hr>
 
 `user.route.js` ans `user.controller.js` conatins the code to delete user in the DB
+
+<h3>Complete Delete user account functionality</h3> <hr>
+
+`DashProfile.jsx` has the Ui and the fucionality.
