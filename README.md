@@ -240,3 +240,9 @@ signout buttons functionality has been updated in `DashProfile`, `Header`, `Dash
 
 <h3>Add Admin user functionality to user</h3> <hr>
 
+`user.model.js` has a isAdmin scheme and `auth.controller.js` cookie tokens contain the boolean value of isAdmin.
+
+<h3>Complete create a Post page UI</h3> <hr>
+
+`DashProfile.jsx` has the create post button.<br>
+`CreatePost.jsx` has the UI code to the create-post page.<br>
