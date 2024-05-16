@@ -271,4 +271,8 @@ Only Admin can see the Posts tab in `DashSlider.jsx`
 
 <h3>Show user posts inside dashboard</h3> <hr>
 
-All the posts has been added to a Table in `DashPosts.jsx`. Tailwind scrollbar also has been used
+All the posts has been added to a Table in `DashPosts.jsx`. Tailwind scrollbar also has been used.
+
+<h3>Add show more functionality to the posts results of the dashboard</h3> <hr>
+
+`DashPosts.jsx` limits 9 posts and shows the `show more` button
