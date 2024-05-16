@@ -268,3 +268,7 @@ Only Admin can see the Posts tab in `DashSlider.jsx`
 <h3>Create get posts API route</h3> <hr>
 
 `post.controller.js` has exported getposts function with all the logics. `/api/post/getposts` sends a GET request and get the total no. of posts. and this can be limited by `/getposts?limit=1`
+
+<h3>Show user posts inside dashboard</h3> <hr>
+
+All the posts has been added to a Table in `DashPosts.jsx`. Tailwind scrollbar also has been used
