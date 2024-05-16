@@ -252,3 +252,8 @@ signout buttons functionality has been updated in `DashProfile`, `Header`, `Dash
 `post.model.js` contains all the rules for a post.<br>
 `post.route.js` routes a POST request to `/create`. Which send the request through backend `/api/post/create`.<br>
 `post.controller.js` handles all the logics and errors.
+
+<h3>Complete Upload post image functionality</h3> <hr>
+
+`CreatePost.jsx` has the backend logics and saves the image in the firebase.
+
