@@ -257,3 +257,6 @@ signout buttons functionality has been updated in `DashProfile`, `Header`, `Dash
 
 `CreatePost.jsx` has the backend logics and saves the image in the firebase.
 
+<h3>Complete Create post functionality</h3> <hr>
+
+`CreatePost.jsx` errors and alerts has been handled. Navigates to the post after published.
