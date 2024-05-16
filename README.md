@@ -260,3 +260,9 @@ signout buttons functionality has been updated in `DashProfile`, `Header`, `Dash
 <h3>Complete Create post functionality</h3> <hr>
 
 `CreatePost.jsx` errors and alerts has been handled. Navigates to the post after published.
+
+<h3>Add post section to the dashboard</h3> <hr>
+
+Only Admin can see the Posts tab in `DashSlider.jsx`
+
+
