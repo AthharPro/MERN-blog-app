@@ -265,4 +265,6 @@ signout buttons functionality has been updated in `DashProfile`, `Header`, `Dash
 
 Only Admin can see the Posts tab in `DashSlider.jsx`
 
+<h3>Create get posts API route</h3> <hr>
 
+`post.controller.js` has exported getposts function with all the logics. `/api/post/getposts` sends a GET request and get the total no. of posts. and this can be limited by `/getposts?limit=1`
