@@ -276,3 +276,8 @@ All the posts has been added to a Table in `DashPosts.jsx`. Tailwind scrollbar a
 <h3>Add show more functionality to the posts results of the dashboard</h3> <hr>
 
 `DashPosts.jsx` limits 9 posts and shows the `show more` button
+
+<h3>Add delete post functionality to the dashboard</h3> <hr>
+
+`DashPosts.jsx` contains handleDeletePost function.<br>
+`post.route` and `post.controller` sends a DELETE request to the DB.
