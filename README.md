@@ -281,3 +281,7 @@ All the posts has been added to a Table in `DashPosts.jsx`. Tailwind scrollbar a
 
 `DashPosts.jsx` contains handleDeletePost function.<br>
 `post.route` and `post.controller` sends a DELETE request to the DB.
+
+<h3>Add update post functionality</h3> <hr>
+
+`UpdatePost.jsx` has the UI. and `post.controller.js` handles updatepost function.
