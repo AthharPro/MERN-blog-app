@@ -289,3 +289,9 @@ All the posts has been added to a Table in `DashPosts.jsx`. Tailwind scrollbar a
 <h3>Create get users API route</h3> <hr>
 
 `user.route.js` sends a GET request to the `/api/user/getusers` using the getUsers function in `user.controller.js`.
+
+<h3>Show users to the admin dashboard</h3> <hr>
+
+`Dashboard.jsx` has a tab for users. <br>
+`DashSlider.jsx` has the UI code for the user tab button.<br>
+`DashUser.jsx` has the code to the Users page.
