@@ -295,3 +295,8 @@ All the posts has been added to a Table in `DashPosts.jsx`. Tailwind scrollbar a
 `Dashboard.jsx` has a tab for users. <br>
 `DashSlider.jsx` has the UI code for the user tab button.<br>
 `DashUser.jsx` has the code to the Users page.
+
+<h3>Add delete user functionality to the admin user</h3> <hr>
+
+Modified the userDelete function in `user.controller.js`. <br>
+`DashUsers.jsx` has the handleDeleteUser function.
