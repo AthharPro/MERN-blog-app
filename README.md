@@ -285,3 +285,7 @@ All the posts has been added to a Table in `DashPosts.jsx`. Tailwind scrollbar a
 <h3>Add update post functionality</h3> <hr>
 
 `UpdatePost.jsx` has the UI. and `post.controller.js` handles updatepost function.
+
+<h3>Create get users API route</h3> <hr>
+
+`user.route.js` sends a GET request to the `/api/user/getusers` using the getUsers function in `user.controller.js`.
