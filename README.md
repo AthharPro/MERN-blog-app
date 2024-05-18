@@ -300,3 +300,8 @@ All the posts has been added to a Table in `DashPosts.jsx`. Tailwind scrollbar a
 
 Modified the userDelete function in `user.controller.js`. <br>
 `DashUsers.jsx` has the handleDeleteUser function.
+
+<h3>Complete post page functionality</h3> <hr>
+
+`PostPage.jsx` has the common code to all the posts. <br>
+`index.css` has the styling for it.
