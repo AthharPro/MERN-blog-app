@@ -305,3 +305,8 @@ Modified the userDelete function in `user.controller.js`. <br>
 
 `PostPage.jsx` has the common code to all the posts. <br>
 `index.css` has the styling for it.
+
+<h3>Add call to action to the post page</h3> <hr>
+
+`CallToAction.jsx` got the UI code. 
+
