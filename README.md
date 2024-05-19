@@ -310,3 +310,8 @@ Modified the userDelete function in `user.controller.js`. <br>
 
 `CallToAction.jsx` got the UI code. 
 
+<h3>Add comment section to the post page</h3> <hr>
+
+model, route, controller is created for the backend purpose. <br>
+`commentSection.jsx` has UI code.
+
