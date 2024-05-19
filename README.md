@@ -327,3 +327,9 @@ model, route, controller is created for the backend purpose. <br>
 `comment.route` and `comment.controller` handles likeComment function. <br>
 `CommentSection.jsx` handleLike function is created. <br>
 `Comment.jsx` has the Like button UI.
+
+<h3>Add edit functionality to the comment component</h3> <hr>
+
+`comment.route` and `comment.controller` handles editComment function. <br>
+`CommentSection.jsx` handleEdit function is created. <br>
+`Comment.jsx` has the Edit button UI for the user commment and Admin.
