@@ -343,3 +343,8 @@ model, route, controller is created for the backend purpose. <br>
 <h3>Add recent article setion to the post page</h3> <hr>
 
 `PostPage.jsx` import the recent posts from `PostCard.jsx`
+
+<h3>Add comment section to the Admin dashboard</h3> <hr>
+
+`DashComments.jsx` has the UI and logic code. Routes and Controller aslo has been handled. <br>
+`DashSlider.jsx` has the comment button.
