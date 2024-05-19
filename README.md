@@ -333,3 +333,9 @@ model, route, controller is created for the backend purpose. <br>
 `comment.route` and `comment.controller` handles editComment function. <br>
 `CommentSection.jsx` handleEdit function is created. <br>
 `Comment.jsx` has the Edit button UI for the user commment and Admin.
+
+<h3>Add delete functionality to the comment component</h3> <hr>
+
+`comment.route` and `comment.controller` handles deleteComment function. <br>
+`CommentSection.jsx` handleDelete function is created. <br>
+`Comment.jsx` has the Delete button UI for the user commment and Admin.
