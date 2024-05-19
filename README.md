@@ -339,3 +339,7 @@ model, route, controller is created for the backend purpose. <br>
 `comment.route` and `comment.controller` handles deleteComment function. <br>
 `CommentSection.jsx` handleDelete function is created. <br>
 `Comment.jsx` has the Delete button UI for the user commment and Admin.
+
+<h3>Add recent article setion to the post page</h3> <hr>
+
+`PostPage.jsx` import the recent posts from `PostCard.jsx`
