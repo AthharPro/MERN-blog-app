@@ -315,3 +315,10 @@ Modified the userDelete function in `user.controller.js`. <br>
 model, route, controller is created for the backend purpose. <br>
 `commentSection.jsx` has UI code.
 
+<h3>Show the comments of a post</h3> <hr>
+
+`commentSection.jsx` has been modified to show all the comments in live time. `moment` package has been used. <br>
+`Comment.jsx` has the UI and logic for it. <br>
+`user.route` and `user.controller` getUser for specific comment. <br>
+`comment.route` and `comment.controller` getPostComments for specific post.
+
