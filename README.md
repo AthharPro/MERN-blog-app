@@ -322,3 +322,8 @@ model, route, controller is created for the backend purpose. <br>
 `user.route` and `user.controller` getUser for specific comment. <br>
 `comment.route` and `comment.controller` getPostComments for specific post.
 
+<h3>Add like functionality to the comment component</h3> <hr>
+
+`comment.route` and `comment.controller` handles likeComment function. <br>
+`CommentSection.jsx` handleLike function is created. <br>
+`Comment.jsx` has the Like button UI.
