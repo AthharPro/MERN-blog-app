@@ -357,3 +357,6 @@ model, route, controller is created for the backend purpose. <br>
 
 `Home.jsx` is completed.
 
+<h3>Complete search page </h3> <hr>
+
+`Search.jsx`

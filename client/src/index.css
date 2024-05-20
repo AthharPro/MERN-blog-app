@@ -52,4 +52,15 @@ body {
    margin-left: 2rem;
 }
 
+.navbar-collapse {
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+}
 
+.navbar-collapse.collapsed {
+  max-height: 0;
+}
+
+.navbar-collapse.expanded {
+  max-height: 500px; /* Set this to a value that can fit your content */
+}
