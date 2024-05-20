@@ -348,3 +348,7 @@ model, route, controller is created for the backend purpose. <br>
 
 `DashComments.jsx` has the UI and logic code. Routes and Controller aslo has been handled. <br>
 `DashSlider.jsx` has the comment button.
+
+<h3>Add dashboard overview to the Admin dashboard</h3> <hr>
+
+`DashboardComp.jsx` has the UI and logics. `DashSlider.jsx` has the Dashboard button. 
