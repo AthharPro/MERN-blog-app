@@ -352,3 +352,8 @@ model, route, controller is created for the backend purpose. <br>
 <h3>Add dashboard overview to the Admin dashboard</h3> <hr>
 
 `DashboardComp.jsx` has the UI and logics. `DashSlider.jsx` has the Dashboard button. 
+
+<h3>Complete the home page</h3> <hr>
+
+`Home.jsx` is completed.
+
