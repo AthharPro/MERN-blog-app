@@ -123,13 +123,13 @@ export default function Header() {
     <Navbar.Collapse className="text-center" >
 
       <Navbar.Link active={path === "/"} as={"div"}>
-        <Link to="/">Home</Link>
+        <Link to="/"><span className="flex w-full items-center justify-center">Home</span></Link>
       </Navbar.Link>
       <Navbar.Link active={path === "/about"} as={"div"}>
-        <Link to="/about">About</Link>
+        <Link to="/about"><span className="flex w-full items-center justify-center">About</span></Link>
       </Navbar.Link>
       <Navbar.Link active={path === "/projects"} as={"div"}>
-        <Link to="/projects">Projects</Link>
+        <Link to="/projects"><span className="flex w-full items-center justify-center">Project</span></Link>
       </Navbar.Link>
     </Navbar.Collapse>
       

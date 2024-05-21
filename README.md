@@ -360,3 +360,7 @@ model, route, controller is created for the backend purpose. <br>
 <h3>Complete search page </h3> <hr>
 
 `Search.jsx`
+
+<h3>Complete About page and Project page </h3> <hr>
+
+`About.jsx` and `Projects.jsx`
