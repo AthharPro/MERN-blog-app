@@ -9,11 +9,15 @@ const adSchema = new mongoose.Schema(
       },
       content: {
          type: String,
-         required: true,
+         default: 'No Description',
       },
       image: {
          type: String,
-         default: 'https://t4.ftcdn.net/jpg/07/06/84/33/360_F_706843327_MyBrGrVTWIzsp4yR7Tsui6RZSbGS7qLr.jpg'
+         default: 'https://t4.ftcdn.net/jpg/07/06/84/33/360_F_706843327_MyBrGrVTWIzsp4yR7Tsui6RZSbGS7qLr.jpg',
+      },
+      category: {
+         type: String,
+         default: 'general'
       },
       targetURL: {
          type: String,
@@ -25,11 +29,11 @@ const adSchema = new mongoose.Schema(
       },
       startDate: {
          type: Date,
-         required: true
+         required: true,
       },
       endDate: {
          type: Date,
-         required: true
+         required: true,
       },
       isActive: {
          type: Boolean,

@@ -6,7 +6,7 @@ export const createAd = async (req, res, next) => {
    if (!req.user.isAdmin) {
       return next(errorHandler(403, 'You are not allowed to create Advertisements.'));
    }
-   if (!req.body.title || !req.body.content || !req.body.targetURL || !req.body.startDate || !req.body.endDate) {
+   if (!req.body.title || !req.body.targetURL || !req.body.startDate || !req.body.endDate) {
       return next(errorHandler(400, 'Please provide all required fields'));
    }
    
