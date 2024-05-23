@@ -372,3 +372,5 @@ model, route, controller is created for the backend purpose. <br>
 1. Ad : Create Ad API routes
 
    `ad.model.js` , `ad.conroller.js` , `ad.route.js` has been created and `/api/ad` route has been added to `index.js`
+
+2. Ad : Create Ad button in DashSlider
