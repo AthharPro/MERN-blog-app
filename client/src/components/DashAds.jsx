@@ -13,7 +13,7 @@ export default function DashAds() {
   const [ads, setAds] = useState([])
   const [showMore, setShowMore] = useState(true)
 
-  //const [deleteAdID, serDeleteAdID] = useState('');
+  const [deleteAdID, setDeleteAdID] = useState('');
   const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
@@ -37,7 +37,29 @@ export default function DashAds() {
     } catch (error) {
       console.log(error.message);
     }
-  }
+  };
+
+  const handleDeleteAd = async () => {
+    setShowModal(false);
+    try {
+      const res = await fetch(
+        `/api/ad/delete/${deleteAdID}/${currentUser._id}`,
+        {
+          method: 'DELETE',
+        }
+      );
+      const data = await res.json();
+      if (!res.ok) {
+        console.log(data.message);
+      } else {
+        setAds((prev) =>
+          prev.filter((ad) => ad._id !== deleteAdID)
+        );
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   const handleShowMore = async () => {
     const startIndex = ads.length;
@@ -83,11 +105,11 @@ export default function DashAds() {
                             )}
                         </span>
                     </Table.Cell>
-                    <Table.Cell className="w-fit">
+                    <Table.Cell className="">
                       {(new Date(ad.startDate).toLocaleDateString())}
                     </Table.Cell>
-                    <Table.Cell className="w-fit">
-                      {new Date(ad.endDate).toLocaleDateString()}
+                    <Table.Cell className="">
+                      {(new Date(ad.endDate).toLocaleDateString())}
                     </Table.Cell>
                     <Table.Cell>
                         <img
@@ -110,6 +132,7 @@ export default function DashAds() {
                         className='font-medium text-red-500 hover:underline cursor-pointer'
                         onClick={() => {
                           setShowModal(true)
+                          setDeleteAdID(ad._id)
                         }}
                       >
                         Delete
@@ -134,7 +157,6 @@ export default function DashAds() {
         <p>You have no ads yet.</p>
       )}
 
-      {/* delete ad modal */}
       <Modal
         show={showModal} onClose={() =>
         setShowModal(false)}
@@ -152,6 +174,7 @@ export default function DashAds() {
           <div className="flex flex-row justify-center gap-4">
             <Button
               color={'failure'}
+              onClick={handleDeleteAd}
             >
               Yes, I'm sure
             </Button>

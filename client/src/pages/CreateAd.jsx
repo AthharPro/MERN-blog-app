@@ -44,7 +44,7 @@ export default function CreateAd() {
     endDate: nextWeek,
   });
 
-  console.log(formData);
+  //console.log(formData);
 
   const handleUpdloadImage = async () => {
     try {
@@ -191,7 +191,7 @@ export default function CreateAd() {
             setFormData({ ...formData, content: e.target.value })
           }
         />
-        
+
         <div className="flex flex-col sm:flex-row gap-4 justify-between mb-10">
           <div className="flex flex-col w-full">
             <Label className="px-3 pb-1">Start Date</Label>
