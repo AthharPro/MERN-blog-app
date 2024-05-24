@@ -15,17 +15,20 @@ import {
   uploadBytesResumable,
 } from "firebase/storage";
 import { app } from "../firebase";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-export default function CreateAd() {
+export default function UpdateAd() {
   const [file, setFile] = useState(null);
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
   const [publishError, setPublishError] = useState(null);
   const navigate = useNavigate();
+
+  const { currentUser } = useSelector((state) => state.user);
 
   const currentFullDate = new Date();
   const currentDate = new Date().toISOString().split("T")[0];
@@ -46,6 +49,39 @@ export default function CreateAd() {
     endDate: nextWeek,
     isActive: true,
   });
+
+  const { adId } = useParams();
+
+  useEffect(() => {
+    try {
+      const fetchAd = async () => {
+        const res = await fetch(`/api/ad/getads?adId=${adId}`);
+        const data = await res.json();
+        if (!res.ok) {
+          console.log(data.message);
+          setPublishError(data.message);
+          return;
+        }
+        if (res.ok) {
+          setPublishError(null);
+          setFormData({
+            title: data.ads[0].title,
+            category: data.ads[0].category,
+            content: data.ads[0].content,
+            targetURL: data.ads[0].targetURL,
+            image: data.ads[0].image,
+            startDate: data.ads[0].startDate.split("T")[0],
+            endDate: data.ads[0].endDate.split("T")[0],
+            isActive: data.ads[0].isActive,
+          });
+        }
+      };
+
+      fetchAd();
+    } catch (error) {
+      console.log(error.message);
+    }
+  }, [adId]);
 
   //console.log(formData);
 
@@ -88,8 +124,8 @@ export default function CreateAd() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("/api/ad/create", {
-        method: "POST",
+      const res = await fetch(`/api/ad/update/${adId}/${currentUser._id}`, {
+        method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
@@ -113,7 +149,7 @@ export default function CreateAd() {
   return (
     <div className="p-3 max-w-3xl mx-auto min-h-screen">
       <h1 className="text-center text-3xl my-7 font-semibold">
-        Create an Advertisement
+        Update an Advertisement
       </h1>
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-4 sm:flex-row justify-between">
@@ -123,11 +159,13 @@ export default function CreateAd() {
             required
             id="title"
             className="flex-1"
+            value={formData.title}
             onChange={(e) =>
               setFormData({ ...formData, title: e.target.value })
             }
           />
           <Select
+            value={formData.category}
             onChange={(e) =>
               setFormData({ ...formData, category: e.target.value })
             }
@@ -145,6 +183,7 @@ export default function CreateAd() {
           required
           id="targetURL"
           className="flex-1"
+          value={formData.targetURL}
           onChange={(e) =>
             setFormData({ ...formData, targetURL: e.target.value })
           }
@@ -190,6 +229,7 @@ export default function CreateAd() {
           className="flex-1"
           maxLength="100"
           rows="2"
+          value={formData.content}
           onChange={(e) =>
             setFormData({ ...formData, content: e.target.value })
           }

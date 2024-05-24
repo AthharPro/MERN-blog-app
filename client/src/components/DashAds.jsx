@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Button, Table, TableBody, Modal } from "flowbite-react";
 import { HiOutlineExclamationCircle, HiOutlineCheck, HiOutlineX } from "react-icons/hi";
 import "tailwind-scrollbar";
@@ -15,6 +15,8 @@ export default function DashAds() {
 
   const [deleteAdID, setDeleteAdID] = useState('');
   const [showModal, setShowModal] = useState(false)
+
+  const { adId } = useParams();
 
   useEffect(() => {
     if(currentUser  && currentUser.isAdmin){
@@ -112,14 +114,19 @@ export default function DashAds() {
                       {(new Date(ad.endDate).toLocaleDateString())}
                     </Table.Cell>
                     <Table.Cell>
+                        <Link to={ad.targetURL} target="blank">
                         <img
                           src={ad.image}
                           alt={ad.title}
                           className="w-20 h-10 object-cover"
                           />
+                        </Link>
+                        
                     </Table.Cell>
                     <Table.Cell className="font-medium text-gray-900 dark:text-white">
+                    <Link to={ad.targetURL} target="blank">
                         {ad.title}
+                    </Link>
                     </Table.Cell>
                     <Table.Cell className="text-xs">
                         {ad.content}
@@ -140,7 +147,9 @@ export default function DashAds() {
                     </Table.Cell>
                     <Table.Cell className="max-w-10">
                       <Link to={`/update-ad/${ad._id}`}>
-                        <span className='text-teal-500 hover:underline'>Edit</span>
+                        <span className='text-teal-500 hover:underline'>
+                          Edit
+                        </span>
                       </Link>
                     </Table.Cell>
                 </Table.Row>

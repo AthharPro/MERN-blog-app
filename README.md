@@ -380,3 +380,5 @@ model, route, controller is created for the backend purpose. <br>
 4. Ad: create DashAds and getAds functionality
 
 5. Ad: create Delete Ad functionality
+
+6. Ad: create Update Ad functionality

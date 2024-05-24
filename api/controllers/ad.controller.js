@@ -25,7 +25,9 @@ export const getAds = async (req, res, next) => {
       const startIndex = parseInt(req.query.startIndex) || 0;
       const limit = parseInt(req.query.limit) || 9;
       const sortDirection = req.query.order === 'asc' ? -1 : 1;
-      const allAds = await Ad.find()
+      const allAds = await Ad.find({
+         ...(req.query.adId && { _id: req.query.adId }),
+      })
          .sort({ startDate: sortDirection })
          .skip(startIndex)
          .limit(limit);
@@ -68,6 +70,33 @@ export const deleteAd = async (req, res, next) => {
    try {
      await Ad.findByIdAndDelete(req.params.adId);
      res.status(200).json('The Ad has been deleted');
+   } catch (error) {
+     next(error);
+   }
+ };
+
+ export const updateAd = async (req, res, next) => {
+   if (!req.user.isAdmin || req.user.id !== req.params.userId) {
+     return next(errorHandler(403, 'You are not allowed to update this Ad'));
+   }
+   try {
+     const updatedAd = await Ad.findByIdAndUpdate(
+       req.params.adId,
+       {
+         $set: {
+           title: req.body.title,
+           content: req.body.content,
+           category: req.body.category,
+           image: req.body.image,
+           targetURL: req.body.targetURL,
+           startDate: req.body.startDate,
+           endDate: req.body.endDate,
+           isActive: req.body.isActive,
+         },
+       },
+       { new: true }
+     );
+     res.status(200).json(updatedAd);
    } catch (error) {
      next(error);
    }
