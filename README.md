@@ -376,3 +376,5 @@ model, route, controller is created for the backend purpose. <br>
 2. Ad : Create Ad button in DashSlider
 
 3. Ad: CreateAd page added.
+
+4. Ad: create DashAds and getAds functionality

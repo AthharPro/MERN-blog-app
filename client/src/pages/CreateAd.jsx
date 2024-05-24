@@ -6,7 +6,6 @@ import {
   Select,
   TextInput,
   Textarea,
-  ToggleSwitch,
 } from "flowbite-react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -101,7 +100,7 @@ export default function CreateAd() {
 
       if (res.ok) {
         setPublishError(null);
-        navigate(`/dashboard?tab=ad`);
+        navigate(`/dashboard?tab=ads`);
       }
     } catch (error) {
       setPublishError("Something went wrong");
@@ -182,17 +181,18 @@ export default function CreateAd() {
           />
         )}
 
-          
-        <ReactQuill
-          theme="snow"
+        <Textarea
           placeholder="Description"
-          className="mb-1"
-          onChange={(value) => {
-            setFormData({ ...formData, content: value });
-          }}
+          id="content"
+          className="flex-1"
+          maxLength="100"
+          rows="2"
+          onChange={(e) =>
+            setFormData({ ...formData, content: e.target.value })
+          }
         />
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-between">
+        
+        <div className="flex flex-col sm:flex-row gap-4 justify-between mb-10">
           <div className="flex flex-col w-full">
             <Label className="px-3 pb-1">Start Date</Label>
             <TextInput
