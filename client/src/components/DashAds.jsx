@@ -86,8 +86,8 @@ export default function DashAds() {
           <Table hoverable className="shadow-md">
             <Table.Head>
               <Table.HeadCell>Active</Table.HeadCell>
-              <Table.HeadCell>Start</Table.HeadCell>
-              <Table.HeadCell>End</Table.HeadCell>
+              <Table.HeadCell>Start - End</Table.HeadCell>
+              <Table.HeadCell>Veiw Count</Table.HeadCell>
               <Table.HeadCell>Ad Image</Table.HeadCell>
               <Table.HeadCell>Title</Table.HeadCell>
               <Table.HeadCell>Description</Table.HeadCell>
@@ -107,11 +107,11 @@ export default function DashAds() {
                             )}
                         </span>
                     </Table.Cell>
-                    <Table.Cell className="">
-                      {(new Date(ad.startDate).toLocaleDateString())}
+                    <Table.Cell className="text-xs">
+                      {(new Date(ad.startDate).toLocaleDateString()) + ' - ' + (new Date(ad.endDate).toLocaleDateString())}
                     </Table.Cell>
                     <Table.Cell className="">
-                      {(new Date(ad.endDate).toLocaleDateString())}
+                      {ad.viewCount}
                     </Table.Cell>
                     <Table.Cell>
                         <Link to={ad.targetURL} target="blank">

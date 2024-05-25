@@ -382,3 +382,5 @@ model, route, controller is created for the backend purpose. <br>
 5. Ad: create Delete Ad functionality
 
 6. Ad: create Update Ad functionality
+
+7. Ad: AdCard and showAd functionality added in post page

@@ -1,6 +1,7 @@
 import {
   Alert,
   Button,
+  Checkbox,
   FileInput,
   Label,
   Select,
@@ -26,6 +27,7 @@ export default function UpdateAd() {
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
   const [publishError, setPublishError] = useState(null);
+
   const navigate = useNavigate();
 
   const { currentUser } = useSelector((state) => state.user);
@@ -47,7 +49,7 @@ export default function UpdateAd() {
     image: "",
     startDate: currentDate,
     endDate: nextWeek,
-    isActive: true,
+    isActive: false,
   });
 
   const { adId } = useParams();
@@ -235,7 +237,7 @@ export default function UpdateAd() {
           }
         />
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-between mb-10">
+        <div className="flex flex-col sm:flex-row gap-4 justify-between mb-5">
           <div className="flex flex-col w-full">
             <Label className="px-3 pb-1">Start Date</Label>
             <TextInput
@@ -272,9 +274,21 @@ export default function UpdateAd() {
               value={formData.endDate}
             />
           </div>
+          <div className="flex felx-col justify-center">
+            <Label>
+              Active
+              <Checkbox
+                className="ml-3"
+                checked={formData.isActive}
+                onChange={(e) =>
+                  setFormData({ ...formData, isActive: e.target.checked })
+                }
+              />
+            </Label>
+          </div>
         </div>
 
-        <Button type="submit" gradientDuoTone="greenToBlue">
+        <Button type="submit" gradientDuoTone="greenToBlue" className="mb-10">
           Publish
         </Button>
         {publishError && (

@@ -24,7 +24,7 @@ export const getAds = async (req, res, next) => {
    try {
       const startIndex = parseInt(req.query.startIndex) || 0;
       const limit = parseInt(req.query.limit) || 9;
-      const sortDirection = req.query.order === 'asc' ? -1 : 1;
+      const sortDirection = req.query.order === 'desc' ? -1 : 1;
       const allAds = await Ad.find({
          ...(req.query.adId && { _id: req.query.adId }),
       })
@@ -97,6 +97,34 @@ export const deleteAd = async (req, res, next) => {
        { new: true }
      );
      res.status(200).json(updatedAd);
+   } catch (error) {
+     next(error);
+   }
+ };
+
+ export const showAd = async (req, res, next) => {
+   try {
+     const currentDate = new Date();
+     const limit = parseInt(req.query.limit) || 1;
+ 
+     const ads = await Ad.find({
+       ...(req.query.adId && { _id: req.query.adId }),
+       endDate: { $gte: currentDate },
+       startDate: { $lte: currentDate },
+       isActive: true
+     })
+     .sort({ viewCount: 1 })
+     .limit(limit);
+ 
+     const incrementedAds = await Promise.all(
+       ads.map(async (ad) => {
+         ad.viewCount += 1;
+         await ad.save();
+         return ad;
+       })
+     );
+ 
+     res.status(200).json(incrementedAds);
    } catch (error) {
      next(error);
    }
