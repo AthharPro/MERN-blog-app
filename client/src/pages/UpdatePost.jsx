@@ -18,7 +18,13 @@ export default function UpdatePost() {
   const [file, setFile] = useState(null);
   const [imageUploadProgress, setImageUploadProgress] = useState(null);
   const [imageUploadError, setImageUploadError] = useState(null);
-  const [formData, setFormData] = useState({});
+
+  const [formData, setFormData] = useState({
+    title: "",
+    category: 'uncategorized',
+    content: "",
+    image: "",
+  });
   const [publishError, setPublishError] = useState(null);
   const { postId } = useParams();
 
@@ -37,7 +43,12 @@ export default function UpdatePost() {
         }
         if (res.ok) {
           setPublishError(null);
-          setFormData(data.posts[0]);
+          setFormData({
+            title: data.posts[0].title,
+            category: data.posts[0].category,
+            content: data.posts[0].content,
+            image: data.posts[0].image,
+          });
         }
       };
 
@@ -86,7 +97,7 @@ export default function UpdatePost() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`/api/post/updatepost/${formData._id}/${currentUser._id}`, {
+      const res = await fetch(`/api/post/updatepost/${postId}/${currentUser._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
