@@ -48,7 +48,6 @@ export default function Header() {
     navigate(`/search?${searchQuery}`);
   };
 
-
   return (
     <Navbar className="border-b-2 sticky top-0 z-30">
       <Link
@@ -102,10 +101,15 @@ export default function Header() {
                 {currentUser.email}
               </span>
             </Dropdown.Header>
-            <Link to={"/dashboard?tab=dash"}>
-              <Dropdown.Item>Dashboard</Dropdown.Item>
-            </Link>
-            <Dropdown.Divider />
+            {currentUser.isAdmin && (
+              <>
+              
+              <Link to={"/dashboard?tab=dash"}>
+                <Dropdown.Item>Dashboard</Dropdown.Item>
+              </Link>
+              <Dropdown.Divider />
+              </>
+            )}
             <Link to={"/dashboard?tab=profile"}>
               <Dropdown.Item>Profile</Dropdown.Item>
             </Link>
@@ -119,24 +123,33 @@ export default function Header() {
             </Button>
           </Link>
         )}
-        
-         <Navbar.Toggle />
+
+        <Navbar.Toggle />
       </div>
-      
 
-    <Navbar.Collapse className="text-center" >
-
-      <Navbar.Link active={path === "/"} as={"div"}>
-        <Link to="/"><span className="flex w-full items-center justify-center">Home</span></Link>
-      </Navbar.Link>
-      <Navbar.Link active={path === "/about"} as={"div"}>
-        <Link to="/about"><span className="flex w-full items-center justify-center">About</span></Link>
-      </Navbar.Link>
-      <Navbar.Link active={path === "/projects"} as={"div"}>
-        <Link to="/projects"><span className="flex w-full items-center justify-center">Project</span></Link>
-      </Navbar.Link>
-    </Navbar.Collapse>
-      
+      <Navbar.Collapse className="text-center">
+        <Navbar.Link active={path === "/"} as={"div"}>
+          <Link to="/">
+            <span className="flex w-full items-center justify-center">
+              Home
+            </span>
+          </Link>
+        </Navbar.Link>
+        <Navbar.Link active={path === "/about"} as={"div"}>
+          <Link to="/about">
+            <span className="flex w-full items-center justify-center">
+              About
+            </span>
+          </Link>
+        </Navbar.Link>
+        <Navbar.Link active={path === "/projects"} as={"div"}>
+          <Link to="/projects">
+            <span className="flex w-full items-center justify-center">
+              Project
+            </span>
+          </Link>
+        </Navbar.Link>
+      </Navbar.Collapse>
     </Navbar>
   );
 }
