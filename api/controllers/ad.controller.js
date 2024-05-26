@@ -52,10 +52,13 @@ export const getAds = async (req, res, next) => {
          createdAt: { $gte: lastMonth }
       });
 
+      const totalViewCount = ads.reduce((sum, ad) => sum + ad.viewCount, 0);
+
       res.status(200).json({
          ads,
          totalAds,
-         lastMonthAds
+         lastMonthAds,
+         totalViewCount,
       })
    } catch (error) {
       next(error);
