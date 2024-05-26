@@ -186,6 +186,13 @@ export default function DashProfile() {
             </Button>
           </Link>
         )}
+        {currentUser.isAdmin && (
+          <Link to={'/create-ad'}>
+            <Button type='button' gradientDuoTone='greenToBlue' className='w-full'>
+              Create an Advertisement
+            </Button>
+          </Link>
+        )}
       </form>
       <div className="text-red-500 flex justify-between mt-5">
          <span onClick={()=>setShowModel(true)} className='cursor-pointer'>Delete Account</span>

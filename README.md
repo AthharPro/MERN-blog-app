@@ -1,5 +1,7 @@
 # MERN Full Stack Bolg App
 
+Link: 
+
 **Front-End**<br>
 Vite + React + TailwindCSS + FlowBite <br><br>
 
@@ -364,3 +366,41 @@ model, route, controller is created for the backend purpose. <br>
 <h3>Complete About page and Project page </h3> <hr>
 
 `About.jsx` and `Projects.jsx`
+
+<h3> Task </h3> <hr>
+
+<b>[1] Create a CRUD Advertisment page to Admin  </b>
+
+1. Create Ad API routes
+
+   `ad.model.js` , `ad.conroller.js` , `ad.route.js` has been created and `/api/ad` route has been added to `index.js`
+
+2. Create Ad button in DashSlider
+
+   `DashSlider.jsx` has an Advertisement button in the dashboard page
+
+3. CreateAd page added.
+
+   `DashProfile.jsx` page has a create Ad button which links to `CreateAd.jsx` page. An Admin can create an Ad.
+
+4. create DashAds and getAds functionality
+
+   `/getads` route has been created to read all the Ads and display in the `DashAds.jsx` page as a tables. 
+
+5. create DeleteAd functionality
+
+   `/delete/:adId/:userId` route has been added to delete a specific Ad.
+
+6. create UpdateAd functionality
+
+   `/update/:adId/:userId` route has been added to update a specific Ad.
+
+7. AdCard and showAd functionality added in post page
+
+   `/show` route has been create to get the active adds with the least view count and display in the `PostPage.jsx`. The Ads are retrived in `AdCard.jsx` componetnt. 
+
+8. Ads has been added to dashboard page
+
+   `DashboardComp.jsx` has the summerized detail of all Ads
+
+ ----End-----
